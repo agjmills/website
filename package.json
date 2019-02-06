@@ -1,0 +1,23 @@
+{
+  "name": "alexmills-website",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/agjmills/website.git"
+  },
+  "author": "Alex Mills",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agjmills/website/issues"
+  },
+  "homepage": "https://github.com/agjmills/website#readme",
+  "dependencies": {
+    "webpack": "^4.29.2",
+    "webpack-cli": "^3.2.3"
+  }
+}
