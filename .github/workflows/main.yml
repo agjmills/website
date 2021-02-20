@@ -10,11 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.0.0
-      - run: apk update && apk add libpng-dev
-      - run: npm install -g pngquant-bin
-      - run: yarn install
-      - uses: borales/actions-yarn@v2.0.0
+      - uses: agjmills/actions-yarn@v1.0.0
+        with:
+          cmd: install
+      - uses: agjmills/actions-yarn@v1.0.0
         with:
           cmd: run prod
       - uses: jakejarvis/s3-sync-action@master
