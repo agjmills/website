@@ -1,21 +1,19 @@
 name: Upload Website
 
-on:
-  push:
-    tags: 'v*'
+on: push
+#on:
+#  push:
+#    tags: 'v*'
 
 jobs:
   build:
-    name: Build
+    name: Build and deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: agjmills/actions-yarn@v1.0.0
-        with:
-          cmd: install
-      - uses: agjmills/actions-yarn@v1.0.0
-        with:
-          cmd: run prod
+      - uses: actions/setup-node@v2
+        - run: yarn install
+        - run: yarn run prod
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
